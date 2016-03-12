@@ -36,7 +36,6 @@ lệnh khởi tạo này sẽ tạo ra một thư mục ẩn có tên “.git”
 <h4><b>
 Bước 3: Đặt các file, thư mục bạn muốn đẩy lên vào repository
 </b></h4>
-<br>
 <code>
 git add [file_name]
 </code>
@@ -45,12 +44,9 @@ bạn có thể add tất cả các file và thư mục có trong project vào r
 <br>
 <code>
 git add * 
-<br>
 #hoặc 
-<br>
 git add .
 </code>
-<br>
 <h4><b>
 Bước 4: Lưu tất cả những thay đổi trong mã nguồn vào repository trên máy tính của bạn
 </b></h4>
@@ -158,4 +154,9 @@ source
 <code>
 git push -u origin [tên nhánh]
 # đẩy mã nguồn lên vào một nhánh trên repository git@gitserver:/[username]/[repository].git.
+# đẩy mã nguồn lên vào một nhánh trên repository git@gitserver:/[username]/[repository].git.
+# đẩy mã nguồn lên vào một nhánh trên repository git@gitserver:/[username]/[repository].git.
+# đẩy mã nguồn lên vào một nhánh trên repository git@gitserver:/[username]/[repository].git.
+# TEsdfsd sdf d sdf sfas
+# sdf safd safs dss
 </code>
