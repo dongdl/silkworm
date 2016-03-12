@@ -14,13 +14,152 @@ Khung taj repository trên GitHub
 Sau khi tạo ra một repository bạn có thể tiến hành đẩy mã nguồn của mình lên Git Server.
 
 Đẩy mã nguồn lên Git Server
-
+<br>
+<h4><b>
 Bước 1: Di chuyển đến thư mục chứa mã nguồn của bạn
+</b></h4>
+<br>
 <code>
 cd [path_of_your_project]
 </code>
+<br>
+<h4><b>
 Bước 2: Khởi tạo Git repository
+</b></h4>
+<br>
 <code>
 git init
 </code>
+<br>
 lệnh khởi tạo này sẽ tạo ra một thư mục ẩn có tên “.git” tại thư mục hiện tại. Đây là thư mục điều khiển của một git repository
+<br>
+<h4><b>
+Bước 3: Đặt các file, thư mục bạn muốn đẩy lên vào repository
+</b></h4>
+<br>
+<code>
+git add [file_name]
+</code>
+<br>
+bạn có thể add tất cả các file và thư mục có trong project vào repository bằng cách sử dụng lệnh:
+<br>
+<code>
+git add * 
+<br>
+#hoặc 
+<br>
+git add .
+</code>
+<br>
+<h4><b>
+Bước 4: Lưu tất cả những thay đổi trong mã nguồn vào repository trên máy tính của bạn
+</b></h4>
+<br>
+<code>
+git commit -am "message"
+</code>
+<br>
+Ở đây tham số “-am” là lưu tất cả thay đổi. Trong Git phần message ở cuối mỗi lệnh commit là phần bắt buộc.
+<br>
+<h4><b>
+Bước 5: kết nối với repository trên server
+</b></h4>
+<br>
+<code>
+git remote add origin git@gitserver:/[username]/[repository].git
+<br>
+# gitserver - là domain name của Git Server. Ví dụ như github.com, bitbucket.org, …
+<br>
+# username - tên đăng nhập của bạn trên Git Server
+<br>
+# repository - tên repository mà bạn đã tạo
+<br>
+</code>
+<br>
+Lệnh này gồm 2 phần:
+<br>
+- tạo ra 1 đối tượng “origin” đại diện cho đường dẫn git@gitserver:/[username]/[repository].git bằng lệnh “add”
+<br>
+- kết nối với đường dẫn git@gitserver:/[username]/[repository].git bằng lệnh “remote”
+<br>
+Mở file .git/config ra bạn sẽ thấy lệnh này được thể hiện dưới dạng:
+<br>
+<code>
+[remote "origin"]
+<br>
+    url = git@git.appota.com:thohd/demo.git
+<br>
+    fetch = +refs/heads/*:refs/remotes/origin/*
+<br>
+</code>
+<br>
+<h4><b>
+Bước 6: tạo nhánh trong repository để đẩy source code
+</b></h4>
+<br>
+<code>
+git branch [tên nhánh]
+<br>
+# tạo nhánh mới
+<br>
+git checkout [tên nhánh]
+<br>
+# di chuyển tới một nhánh
+</code>
+<br>
+tạo ra một nhánh con:
+<br>
+<code>
+git checkout [tên nhánh cha]
+<br>
+#di chuyển tới tới nhánh muốn tạo nhánh con
+<br>
+git branch [tên nhánh con]
+<br>
+# tạo nhánh con
+<br>
+git merge [tên nhánh con]
+<br>
+# nối nhánh con vào nhánh cha
+</code>
+<br>
+một nhánh sẽ được lưu trong file .git/config dưới dạng
+<br>
+<code>
+[branch "tên_nhánh"]
+    remote = origin
+    merge = refs/heads/[tên_nhánh]
+</code>
+<br>
+Bằng cách sử dụng linh hoạt nhánh này bạn có thể tạo ra các phiên bản khác nhau của source code. Ví dụ: project demo, với các version v1, v2, v3, ….
+<br>
+<code>
+source
+    v1
+<br>
+        v1.0
+<br>
+        v1.1
+<br>
+        v1.2
+<br>
+    v2
+<br>
+        v2.0
+<br>
+        v2.1
+<br>
+        v2.2
+<br>
+    v3
+<br>
+        v3.0
+<br>
+        v3.1
+</code>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
