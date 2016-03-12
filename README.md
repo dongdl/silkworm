@@ -60,14 +60,12 @@ git commit -am "message"
 <h4><b>
 Bước 5: kết nối với repository trên server
 </b></h4>
-<br>
 <code>
 git remote add origin git@gitserver:/[username]/[repository].git<br>
-# gitserver - là domain name của Git Server. Ví dụ như github.com, bitbucket.org, …
-# username - tên đăng nhập của bạn trên Git Server
-# repository - tên repository mà bạn đã tạo
+    gitserver - là domain name của Git Server. Ví dụ như github.com, bitbucket.org, …
+    username - tên đăng nhập của bạn trên Git Server
+    repository - tên repository mà bạn đã tạo
 </code>
-<br>
 Lệnh này gồm 2 phần:
 <br>
 - tạo ra 1 đối tượng “origin” đại diện cho đường dẫn git@gitserver:/[username]/[repository].git bằng lệnh “add”
@@ -144,8 +142,3 @@ source
 git push -u origin [tên nhánh]
 # đẩy mã nguồn lên vào một nhánh trên repository git@gitserver:/[username]/[repository].git.
 </code>
-# đẩy mã nguồn lên vào một nhánh trên repository git@gitserver:/[username]/[repository].git.
-# đẩy mã nguồn lên vào một nhánh trên repository git@gitserver:/[username]/[repository].git.
-# đẩy mã nguồn lên vào một nhánh trên repository git@gitserver:/[username]/[repository].git.
-# TEsdfsd sdf d sdf sfas
-# sdf safd safs dss
