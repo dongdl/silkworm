@@ -1,0 +1,319 @@
+2016-03-11 03:32:19.4542|INFO|WebApi.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:50875/v1/Products/Product/allproducts
+Token: 123456
+Controller : WebApi.Controllers.ProductController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-11 03:32:32.0039|ERROR|WebApi.Helpers.NLogger|Method: GET
+URL: http://localhost:50875/v1/Products/Product/allproducts
+Token: 123456
+Controller : WebApi.Controllers.ProductController
+Action : Get
+Action Parameters : 
+Error: Sequence contains no matching element
+
+
+2016-03-11 03:32:43.0135|INFO|WebApi.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:50875/v1/Products/Product/allproducts
+Controller : WebApi.Controllers.ProductController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-11 03:32:51.0440|INFO|WebApi.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:50875/v1/Products/Product/allproducts
+Controller : WebApi.Controllers.ProductController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-11 03:34:36.0050|INFO|WebApi.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:50875/v1/Products/Product/allproducts
+Token: 123456
+Controller : WebApi.Controllers.ProductController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-11 03:37:21.6435|ERROR|WebApi.Helpers.NLogger|Method: GET
+URL: http://localhost:50875/v1/Products/Product/allproducts
+Token: 123456
+Controller : WebApi.Controllers.ProductController
+Action : Get
+Action Parameters : 
+Error: Sequence contains no matching element
+
+
+2016-03-11 03:38:37.0898|INFO|WebApi.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:50875/v1/Products/Product/allproducts
+Token: 123456
+Controller : WebApi.Controllers.ProductController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-11 03:39:10.9737|INFO|WebApi.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:50875/v1/Products/Product/allproducts
+Token: 123456
+Controller : WebApi.Controllers.ProductController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-11 03:40:05.0918|INFO|WebApi.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:50875/v1/Products/Product/allproducts
+Token: 123456
+Controller : WebApi.Controllers.ProductController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-11 03:40:49.7794|ERROR|WebApi.Helpers.NLogger|Method: GET
+URL: http://localhost:50875/v1/Products/Product/allproducts
+Token: 123456
+Controller : WebApi.Controllers.ProductController
+Action : Get
+Action Parameters : 
+Error: Value cannot be null.
+Parameter name: source
+
+
+2016-03-11 03:40:56.1317|INFO|WebApi.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:50875/v1/Products/Product/allproducts
+Token: 123456
+Controller : WebApi.Controllers.ProductController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-11 03:41:56.0872|ERROR|WebApi.Helpers.NLogger|Method: GET
+URL: http://localhost:50875/v1/Products/Product/allproducts
+Token: 123456
+Controller : WebApi.Controllers.ProductController
+Action : Get
+Action Parameters : 
+Error: Value cannot be null.
+Parameter name: source
+
+
+2016-03-11 03:42:05.8407|INFO|WebApi.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:50875/v1/Products/Product/allproducts
+Token: 123456
+Controller : WebApi.Controllers.ProductController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-11 03:42:25.2078|ERROR|WebApi.Helpers.NLogger|Method: GET
+URL: http://localhost:50875/v1/Products/Product/allproducts
+Token: 123456
+Controller : WebApi.Controllers.ProductController
+Action : Get
+Action Parameters : 
+Error: Value cannot be null.
+Parameter name: source
+
+
+2016-03-11 03:44:08.6187|INFO|WebApi.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:50875/v1/Products/Product/allproducts
+Token: 123456
+Controller : WebApi.Controllers.ProductController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-11 03:44:42.4517|ERROR|WebApi.Helpers.NLogger|Method: GET
+URL: http://localhost:50875/v1/Products/Product/allproducts
+Token: 123456
+Controller : WebApi.Controllers.ProductController
+Action : Get
+Action Parameters : 
+Error: Products not found
+Error Code: 1000
+
+
+2016-03-11 03:48:30.1327|INFO|WebApi.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:50875/v1/Products/Product/allproducts
+Token: 123456
+Controller : WebApi.Controllers.ProductController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-11 03:48:46.5156|ERROR|WebApi.Helpers.NLogger|Method: GET
+URL: http://localhost:50875/v1/Products/Product/allproducts
+Token: 123456
+Controller : WebApi.Controllers.ProductController
+Action : Get
+Action Parameters : 
+Error: The 'SupplierId' property on 'Product' could not be set to a 'null' value. You must set this property to a non-null value of type 'Int32'. 
+
+
+2016-03-11 03:50:58.7632|INFO|WebApi.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:50875/v1/Products/Product/allproducts
+Token: 123456
+Controller : WebApi.Controllers.ProductController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-11 03:51:36.6584|ERROR|WebApi.Helpers.NLogger|Method: GET
+URL: http://localhost:50875/v1/Products/Product/allproducts
+Token: 123456
+Controller : WebApi.Controllers.ProductController
+Action : Get
+Action Parameters : 
+Error: The 'SupplierId' property on 'Product' could not be set to a 'null' value. You must set this property to a non-null value of type 'Int32'. 
+
+
+2016-03-11 03:52:33.7416|INFO|WebApi.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:50875/v1/Products/Product/allproducts
+Token: 123456
+Controller : WebApi.Controllers.ProductController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-11 18:34:47.2617|INFO|WebApi.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:50875/login
+Controller : WebApi.Controllers.AuthenticateController
+Action : Authenticate
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-11 18:36:17.0648|ERROR|WebApi.Helpers.NLogger|Method: POST
+URL: http://localhost:50875/login
+Controller : WebApi.Controllers.AuthenticateController
+Action : Authenticate
+Action Parameters : 
+Error: The conversion of a datetime2 data type to a datetime data type resulted in an out-of-range value.
+The statement has been terminated.
+
+
+2016-03-11 18:37:05.1876|INFO|WebApi.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:50875/login
+Token: 123456
+Controller : WebApi.Controllers.AuthenticateController
+Action : Authenticate
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-11 18:37:33.9222|ERROR|WebApi.Helpers.NLogger|Method: POST
+URL: http://localhost:50875/login
+Token: 123456
+Controller : WebApi.Controllers.AuthenticateController
+Action : Authenticate
+Action Parameters : 
+Error: The conversion of a datetime2 data type to a datetime data type resulted in an out-of-range value.
+The statement has been terminated.
+
+
+2016-03-11 18:37:53.6964|INFO|WebApi.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:50875/login
+Token: 123456
+Controller : WebApi.Controllers.AuthenticateController
+Action : Authenticate
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-11 18:40:26.6921|ERROR|WebApi.Helpers.NLogger|Method: POST
+URL: http://localhost:50875/login
+Token: 123456
+Controller : WebApi.Controllers.AuthenticateController
+Action : Authenticate
+Action Parameters : 
+Error: The conversion of a datetime2 data type to a datetime data type resulted in an out-of-range value.
+The statement has been terminated.
+
+
+2016-03-11 18:45:49.9656|INFO|WebApi.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:50875/login
+Controller : WebApi.Controllers.AuthenticateController
+Action : Authenticate
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-11 18:47:36.7147|INFO|WebApi.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:50875/login
+Controller : WebApi.Controllers.AuthenticateController
+Action : Authenticate
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-11 18:47:51.9216|ERROR|WebApi.Helpers.NLogger|Method: POST
+URL: http://localhost:50875/login
+Controller : WebApi.Controllers.AuthenticateController
+Action : Authenticate
+Action Parameters : 
+Error: Violation of PRIMARY KEY constraint 'PK_Token'. Cannot insert duplicate key in object 'dbo.Token'.
+The statement has been terminated.
+
+
+2016-03-11 19:57:47.0905|INFO|ATEC.Silkworm.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:50875/v1/Products/Product/allproducts
+Token: 123456
+Controller : ATEC.Silkworm.Controllers.ProductController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-11 21:19:27.3655|INFO|ATEC.Silkworm.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:50875/v1/Products/Product/allproducts
+Token: 123456
+Controller : ATEC.Silkworm.Controllers.ProductController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-11 21:19:53.5480|INFO|ATEC.Silkworm.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:50875/get/token
+Controller : ATEC.Silkworm.Controllers.AuthenticateController
+Action : Authenticate
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-11 21:19:58.4123|ERROR|ATEC.Silkworm.Helpers.NLogger|Method: POST
+URL: http://localhost:50875/get/token
+Controller : ATEC.Silkworm.Controllers.AuthenticateController
+Action : Authenticate
+Action Parameters : 
+Error: Violation of PRIMARY KEY constraint 'PK_Token'. Cannot insert duplicate key in object 'dbo.Token'.
+The statement has been terminated.
+
+
+2016-03-11 21:20:13.6451|INFO|ATEC.Silkworm.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:50875/get/token
+Token: 123456
+Controller : ATEC.Silkworm.Controllers.AuthenticateController
+Action : Authenticate
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-11 21:20:20.9175|ERROR|ATEC.Silkworm.Helpers.NLogger|Method: POST
+URL: http://localhost:50875/get/token
+Token: 123456
+Controller : ATEC.Silkworm.Controllers.AuthenticateController
+Action : Authenticate
+Action Parameters : 
+Error: Violation of PRIMARY KEY constraint 'PK_Token'. Cannot insert duplicate key in object 'dbo.Token'.
+The statement has been terminated.
+
+
+2016-03-11 21:21:00.3958|INFO|ATEC.Silkworm.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:50875/v1/Products/Product/allproducts
+Token: 123456
+Controller : ATEC.Silkworm.Controllers.ProductController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-11 22:01:01.6242|INFO|ATEC.Silkworm.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:50875/v1/Products/Product/allproducts
+Token: 123456
+Controller : ATEC.Silkworm.Controllers.ProductController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+

@@ -1,0 +1,92 @@
+2016-03-12 16:05:05.4724|INFO|ATEC.Silkworm.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:50875/authenticate
+Token: 123456
+Controller : ATEC.Silkworm.Controllers.AuthenticateController
+Action : Authenticate
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-12 16:05:20.7032|ERROR|ATEC.Silkworm.Helpers.NLogger|Method: POST
+URL: http://localhost:50875/authenticate
+Token: 123456
+Controller : ATEC.Silkworm.Controllers.AuthenticateController
+Action : Authenticate
+Action Parameters : 
+Error: Violation of PRIMARY KEY constraint 'PK_Token'. Cannot insert duplicate key in object 'dbo.Token'.
+The statement has been terminated.
+
+
+2016-03-12 16:06:55.1076|INFO|ATEC.Silkworm.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:50875/authenticate
+Token: 123456
+Controller : ATEC.Silkworm.Controllers.AuthenticateController
+Action : Authenticate
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-12 16:07:52.2129|INFO|ATEC.Silkworm.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:50875/authenticate
+Controller : ATEC.Silkworm.Controllers.AuthenticateController
+Action : Authenticate
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-12 16:08:14.9462|ERROR|ATEC.Silkworm.Helpers.NLogger|Method: POST
+URL: http://localhost:50875/authenticate
+Controller : ATEC.Silkworm.Controllers.AuthenticateController
+Action : Authenticate
+Action Parameters : 
+Error: Violation of PRIMARY KEY constraint 'PK_Token'. Cannot insert duplicate key in object 'dbo.Token'.
+The statement has been terminated.
+
+
+2016-03-12 16:12:12.4668|INFO|ATEC.Silkworm.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:50875/login
+Controller : ATEC.Silkworm.Controllers.AuthenticateController
+Action : Authenticate
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-12 16:14:20.4521|INFO|ATEC.Silkworm.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:50875/login
+Controller : ATEC.Silkworm.Controllers.AuthenticateController
+Action : Authenticate
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-12 16:14:30.4117|INFO|ATEC.Silkworm.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:50875/login
+Controller : ATEC.Silkworm.Controllers.AuthenticateController
+Action : Authenticate
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-12 16:15:11.7931|INFO|ATEC.Silkworm.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:50875/login
+Controller : ATEC.Silkworm.Controllers.AuthenticateController
+Action : Authenticate
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-12 16:15:57.6247|INFO|ATEC.Silkworm.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:50875/login
+Controller : ATEC.Silkworm.Controllers.AuthenticateController
+Action : Authenticate
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-12 16:18:12.2244|INFO|ATEC.Silkworm.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:50875/login
+Controller : ATEC.Silkworm.Controllers.AuthenticateController
+Action : Authenticate
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-12 16:22:58.7368|INFO|ATEC.Silkworm.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:50875/v1/Products/Product/allproducts
+Token: 123456
+Controller : ATEC.Silkworm.Controllers.ProductController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+

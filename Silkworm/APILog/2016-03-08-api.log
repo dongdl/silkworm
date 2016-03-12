@@ -1,0 +1,16 @@
+2016-03-08 00:22:38.0631|INFO|WebApi.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:50875/v1/Products/Product/allproducts
+Token: 123456
+Controller : WebApi.Controllers.ProductController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-08 00:23:41.8817|INFO|WebApi.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:50875/v1/Products/Product/allproducts
+Token: 123456
+Controller : WebApi.Controllers.ProductController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+

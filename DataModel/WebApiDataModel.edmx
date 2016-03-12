@@ -1,0 +1,1604 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="WebApiDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Code" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Password" Type="nvarchar" MaxLength="150" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="InviteId" Type="int" Nullable="false" />
+          <Property Name="InviteName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ManagerId" Type="int" Nullable="false" />
+          <Property Name="ManagerName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="IdNumber" Type="nvarchar" MaxLength="12" />
+          <Property Name="IdDate" Type="datetime" />
+          <Property Name="IdProvince1" Type="nvarchar" MaxLength="100" />
+          <Property Name="IdAddress" Type="nvarchar" MaxLength="200" />
+          <Property Name="IdProvince2" Type="nvarchar" MaxLength="100" />
+          <Property Name="BirthDate" Type="datetime" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="200" />
+          <Property Name="Email" Type="nvarchar" MaxLength="150" />
+          <Property Name="TaxCode" Type="nvarchar" MaxLength="32" />
+          <Property Name="BankName" Type="nvarchar" MaxLength="500" />
+          <Property Name="BankAccount" Type="nvarchar" MaxLength="32" />
+          <Property Name="EmbarkDate" Type="datetime" />
+          <Property Name="EmbarkLevel" Type="smallint" />
+          <Property Name="Disabled" Type="bit" Nullable="false" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="Actived" Type="bit" Nullable="false" />
+          <Property Name="CreateBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyBy" Type="int" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="32" Nullable="false" />
+          <Property Name="CustomerId" Type="int" Nullable="false" />
+          <Property Name="CustomerCode" Type="nvarchar" MaxLength="32" />
+          <Property Name="CustomerName" Type="nvarchar" MaxLength="255" />
+          <Property Name="Price" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PriceMark" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DateExportOrder" Type="datetime" Nullable="false" />
+          <Property Name="StaffId" Type="int" Nullable="false" />
+          <Property Name="StaffName" Type="nvarchar" MaxLength="255" />
+          <Property Name="Month" Type="nvarchar" MaxLength="50" />
+          <Property Name="Rejected" Type="bit" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="CreateBy" Type="int" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifyBy" Type="int" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="OrderDetail">
+          <Key>
+            <PropertyRef Name="OrderId" />
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="OrderId" Type="int" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="ProductCode" Type="nvarchar" MaxLength="32" Nullable="false" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="500" />
+          <Property Name="Quantity" Type="smallint" Nullable="false" />
+          <Property Name="UnitPrice" Type="float" Nullable="false" />
+          <Property Name="MarkPrice" Type="float" Nullable="false" />
+          <Property Name="Discount" Type="float" Nullable="false" />
+          <Property Name="Unit" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="SupplierId" Type="int" Nullable="false" />
+          <Property Name="CategoryId" Type="int" />
+          <Property Name="Code" Type="nvarchar" MaxLength="32" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="UnitPrice" Type="float" Nullable="false" />
+          <Property Name="Discount" Type="float" />
+          <Property Name="PriceMark" Type="int" Nullable="false" />
+          <Property Name="UnitsInStock" Type="smallint" Nullable="false" />
+          <Property Name="UnitsOnOrder" Type="smallint" />
+          <Property Name="ReorderLevel" Type="smallint" />
+          <Property Name="Unit" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="QuantityPerUnit" Type="smallint" />
+          <Property Name="Discontinued" Type="smallint" />
+          <Property Name="Disabled" Type="bit" Nullable="false" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="Actived" Type="bit" Nullable="false" />
+          <Property Name="CreateBy" Type="int" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifyBy" Type="int" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ProductCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="CategoryName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="PicturePath" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="ProfitPrice">
+          <Key>
+            <PropertyRef Name="CustomerId" />
+          </Key>
+          <Property Name="CustomerId" Type="int" Nullable="false" />
+          <Property Name="CustomerCode" Type="nvarchar" MaxLength="32" />
+          <Property Name="CustomerName" Type="nvarchar" MaxLength="150" />
+          <Property Name="Month" Type="nvarchar" MaxLength="50" />
+          <Property Name="PositionName" Type="nvarchar" MaxLength="150" />
+          <Property Name="PV" Type="float" />
+          <Property Name="Direct" Type="float" />
+          <Property Name="Mediate" Type="float" />
+          <Property Name="Periodic" Type="float" />
+          <Property Name="Sun" Type="float" />
+          <Property Name="SysManager" Type="float" />
+          <Property Name="Position" Type="float" />
+          <Property Name="GroupSplit" Type="float" />
+          <Property Name="Agency" Type="float" />
+          <Property Name="Total" Type="float" />
+          <Property Name="BeforeTax" Type="float" />
+          <Property Name="AfterTax" Type="float" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="CreateBy" Type="int" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifyBy" Type="int" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ProfitStatistic">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Month" Type="nvarchar" MaxLength="50" />
+          <Property Name="PositionName" Type="nvarchar" MaxLength="150" />
+          <Property Name="PV" Type="float" />
+          <Property Name="Direct" Type="float" />
+          <Property Name="Mediate" Type="float" />
+          <Property Name="Periodic" Type="float" />
+          <Property Name="Sun" Type="float" />
+          <Property Name="SysManager" Type="float" />
+          <Property Name="Position" Type="float" />
+          <Property Name="GroupSplit" Type="float" />
+          <Property Name="Agency" Type="float" />
+          <Property Name="Total" Type="float" />
+          <Property Name="BeforeTax" Type="float" />
+          <Property Name="AfterTax" Type="float" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="CreateBy" Type="int" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifyBy" Type="int" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContactName" Type="nvarchar" MaxLength="150" />
+          <Property Name="ContactTitle" Type="nvarchar" MaxLength="150" />
+          <Property Name="Address" Type="nvarchar" MaxLength="150" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="Region" Type="nvarchar" MaxLength="50" />
+          <Property Name="PostalCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="Country" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="100" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="100" />
+          <Property Name="HomePage" Type="nvarchar" MaxLength="500" />
+          <Property Name="Disabled" Type="bit" Nullable="false" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="Actived" Type="bit" Nullable="false" />
+          <Property Name="CreateBy" Type="int" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifyBy" Type="int" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="SysGroup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Parent" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="EnableDelete" Type="bit" Nullable="false" />
+          <Property Name="SortIndex" Type="smallint" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Disabled" Type="bit" Nullable="false" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="Actived" Type="bit" Nullable="false" />
+          <Property Name="CreateBy" Type="int" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifyBy" Type="int" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SysGroupRole">
+          <Key>
+            <PropertyRef Name="RoleId" />
+            <PropertyRef Name="GroupId" />
+          </Key>
+          <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="GroupId" Type="int" Nullable="false" />
+          <Property Name="AllowView" Type="bit" Nullable="false" />
+          <Property Name="AllowAdd" Type="bit" Nullable="false" />
+          <Property Name="AllowDelete" Type="bit" Nullable="false" />
+          <Property Name="AllowEdit" Type="bit" Nullable="false" />
+          <Property Name="AllowAccess" Type="bit" Nullable="false" />
+          <Property Name="AllowPrint" Type="bit" Nullable="false" />
+          <Property Name="AllowExport" Type="bit" Nullable="false" />
+          <Property Name="AllowImport" Type="bit" Nullable="false" />
+          <Property Name="Disabled" Type="bit" Nullable="false" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="Actived" Type="bit" Nullable="false" />
+          <Property Name="CreateBy" Type="int" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifyBy" Type="int" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SysHistory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="FunctionName" Type="nvarchar" MaxLength="150" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreateBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SysOption">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="ProjectId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Value" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Editable" Type="bit" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="SysRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="FunctionCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FunctionName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ParentName" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="RLevel" Type="tinyint" Nullable="false" />
+          <Property Name="OrderSort" Type="smallint" Nullable="false" />
+          <Property Name="Owner" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Disabled" Type="bit" Nullable="false" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="Actived" Type="bit" Nullable="false" />
+          <Property Name="CreateBy" Type="int" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifyBy" Type="int" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SysUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="150" />
+          <Property Name="BirthDate" Type="datetime" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Disabled" Type="bit" Nullable="false" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="Actived" Type="bit" Nullable="false" />
+          <Property Name="CreateBy" Type="int" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifyBy" Type="int" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SysUserGroup">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="GroupId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="GroupId" Type="int" Nullable="false" />
+          <Property Name="CreateBy" Type="int" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SysUserOption">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="ProjectId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Value" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Editable" Type="bit" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="SysUserRole">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="AllowView" Type="bit" Nullable="false" />
+          <Property Name="AllowAdd" Type="bit" Nullable="false" />
+          <Property Name="AllowDelete" Type="bit" Nullable="false" />
+          <Property Name="AllowEdit" Type="bit" Nullable="false" />
+          <Property Name="AllowAccess" Type="bit" Nullable="false" />
+          <Property Name="AllowPrint" Type="bit" Nullable="false" />
+          <Property Name="AllowExport" Type="bit" Nullable="false" />
+          <Property Name="AllowImport" Type="bit" Nullable="false" />
+          <Property Name="Disabled" Type="bit" Nullable="false" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="Actived" Type="bit" Nullable="false" />
+          <Property Name="CreateBy" Type="int" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifyBy" Type="int" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Token">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="AuthToken" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="IssuedOn" Type="datetime" Nullable="false" />
+          <Property Name="ExpiresOn" Type="datetime" Nullable="false" />
+          <Property Name="Disabled" Type="bit" Nullable="false" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="Actived" Type="bit" Nullable="false" />
+          <Property Name="CreateBy" Type="int" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifyBy" Type="int" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Unit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <Association Name="FK_OrderDetail_Order">
+          <End Role="Order" Type="Self.Order" Multiplicity="1" />
+          <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_ProductCategory">
+          <End Role="ProductCategory" Type="Self.ProductCategory" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Supplier">
+          <End Role="Supplier" Type="Self.Supplier" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Supplier">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="SupplierId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SysGroupRole_SysGroup">
+          <End Role="SysGroup" Type="Self.SysGroup" Multiplicity="1" />
+          <End Role="SysGroupRole" Type="Self.SysGroupRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SysGroup">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SysGroupRole">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SysGroupRole_SysRole">
+          <End Role="SysRole" Type="Self.SysRole" Multiplicity="1" />
+          <End Role="SysGroupRole" Type="Self.SysGroupRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SysRole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SysGroupRole">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SysHistory_SysUser">
+          <End Role="SysUser" Type="Self.SysUser" Multiplicity="0..1" />
+          <End Role="SysHistory" Type="Self.SysHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SysUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SysHistory">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SysUserGroup_SysGroup">
+          <End Role="SysGroup" Type="Self.SysGroup" Multiplicity="1" />
+          <End Role="SysUserGroup" Type="Self.SysUserGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SysGroup">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SysUserGroup">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SysUserGroup_SysUser">
+          <End Role="SysUser" Type="Self.SysUser" Multiplicity="1" />
+          <End Role="SysUserGroup" Type="Self.SysUserGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SysUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SysUserGroup">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SysUserOption_SysUser">
+          <End Role="SysUser" Type="Self.SysUser" Multiplicity="1" />
+          <End Role="SysUserOption" Type="Self.SysUserOption" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SysUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SysUserOption">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SysUserRole_SysRole">
+          <End Role="SysRole" Type="Self.SysRole" Multiplicity="1" />
+          <End Role="SysUserRole" Type="Self.SysUserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SysRole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SysUserRole">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SysUserRole_SysUser">
+          <End Role="SysUser" Type="Self.SysUser" Multiplicity="1" />
+          <End Role="SysUserRole" Type="Self.SysUserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SysUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SysUserRole">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="WebApiDbModelStoreContainer">
+          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderDetail" EntityType="Self.OrderDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductCategory" EntityType="Self.ProductCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProfitPrice" EntityType="Self.ProfitPrice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProfitStatistic" EntityType="Self.ProfitStatistic" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Supplier" EntityType="Self.Supplier" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SysGroup" EntityType="Self.SysGroup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SysGroupRole" EntityType="Self.SysGroupRole" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SysHistory" EntityType="Self.SysHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SysOption" EntityType="Self.SysOption" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SysRole" EntityType="Self.SysRole" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SysUser" EntityType="Self.SysUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SysUserGroup" EntityType="Self.SysUserGroup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SysUserOption" EntityType="Self.SysUserOption" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SysUserRole" EntityType="Self.SysUserRole" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Token" EntityType="Self.Token" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Unit" EntityType="Self.Unit" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_OrderDetail_Order" Association="Self.FK_OrderDetail_Order">
+            <End Role="Order" EntitySet="Order" />
+            <End Role="OrderDetail" EntitySet="OrderDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_ProductCategory" Association="Self.FK_Product_ProductCategory">
+            <End Role="ProductCategory" EntitySet="ProductCategory" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Supplier" Association="Self.FK_Product_Supplier">
+            <End Role="Supplier" EntitySet="Supplier" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SysGroupRole_SysGroup" Association="Self.FK_SysGroupRole_SysGroup">
+            <End Role="SysGroup" EntitySet="SysGroup" />
+            <End Role="SysGroupRole" EntitySet="SysGroupRole" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SysGroupRole_SysRole" Association="Self.FK_SysGroupRole_SysRole">
+            <End Role="SysRole" EntitySet="SysRole" />
+            <End Role="SysGroupRole" EntitySet="SysGroupRole" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SysHistory_SysUser" Association="Self.FK_SysHistory_SysUser">
+            <End Role="SysUser" EntitySet="SysUser" />
+            <End Role="SysHistory" EntitySet="SysHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SysUserGroup_SysGroup" Association="Self.FK_SysUserGroup_SysGroup">
+            <End Role="SysGroup" EntitySet="SysGroup" />
+            <End Role="SysUserGroup" EntitySet="SysUserGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SysUserGroup_SysUser" Association="Self.FK_SysUserGroup_SysUser">
+            <End Role="SysUser" EntitySet="SysUser" />
+            <End Role="SysUserGroup" EntitySet="SysUserGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SysUserOption_SysUser" Association="Self.FK_SysUserOption_SysUser">
+            <End Role="SysUser" EntitySet="SysUser" />
+            <End Role="SysUserOption" EntitySet="SysUserOption" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SysUserRole_SysRole" Association="Self.FK_SysUserRole_SysRole">
+            <End Role="SysRole" EntitySet="SysRole" />
+            <End Role="SysUserRole" EntitySet="SysUserRole" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SysUserRole_SysUser" Association="Self.FK_SysUserRole_SysUser">
+            <End Role="SysUser" EntitySet="SysUser" />
+            <End Role="SysUserRole" EntitySet="SysUserRole" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WebApiDbModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="WebApiDbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Customers" EntityType="WebApiDbModel.Customer" />
+          <EntitySet Name="Orders" EntityType="WebApiDbModel.Order" />
+          <EntitySet Name="OrderDetails" EntityType="WebApiDbModel.OrderDetail" />
+          <EntitySet Name="Products" EntityType="WebApiDbModel.Product" />
+          <EntitySet Name="ProductCategories" EntityType="WebApiDbModel.ProductCategory" />
+          <EntitySet Name="ProfitPrices" EntityType="WebApiDbModel.ProfitPrice" />
+          <EntitySet Name="ProfitStatistics" EntityType="WebApiDbModel.ProfitStatistic" />
+          <EntitySet Name="Suppliers" EntityType="WebApiDbModel.Supplier" />
+          <EntitySet Name="sysdiagrams" EntityType="WebApiDbModel.sysdiagram" />
+          <EntitySet Name="SysGroups" EntityType="WebApiDbModel.SysGroup" />
+          <EntitySet Name="SysGroupRoles" EntityType="WebApiDbModel.SysGroupRole" />
+          <EntitySet Name="SysHistories" EntityType="WebApiDbModel.SysHistory" />
+          <EntitySet Name="SysOptions" EntityType="WebApiDbModel.SysOption" />
+          <EntitySet Name="SysRoles" EntityType="WebApiDbModel.SysRole" />
+          <EntitySet Name="SysUsers" EntityType="WebApiDbModel.SysUser" />
+          <EntitySet Name="SysUserGroups" EntityType="WebApiDbModel.SysUserGroup" />
+          <EntitySet Name="SysUserOptions" EntityType="WebApiDbModel.SysUserOption" />
+          <EntitySet Name="SysUserRoles" EntityType="WebApiDbModel.SysUserRole" />
+          <EntitySet Name="Units" EntityType="WebApiDbModel.Unit" />
+          <AssociationSet Name="FK_OrderDetail_Order" Association="WebApiDbModel.FK_OrderDetail_Order">
+            <End Role="Order" EntitySet="Orders" />
+            <End Role="OrderDetail" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_ProductCategory" Association="WebApiDbModel.FK_Product_ProductCategory">
+            <End Role="ProductCategory" EntitySet="ProductCategories" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Supplier" Association="WebApiDbModel.FK_Product_Supplier">
+            <End Role="Supplier" EntitySet="Suppliers" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SysGroupRole_SysGroup" Association="WebApiDbModel.FK_SysGroupRole_SysGroup">
+            <End Role="SysGroup" EntitySet="SysGroups" />
+            <End Role="SysGroupRole" EntitySet="SysGroupRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SysUserGroup_SysGroup" Association="WebApiDbModel.FK_SysUserGroup_SysGroup">
+            <End Role="SysGroup" EntitySet="SysGroups" />
+            <End Role="SysUserGroup" EntitySet="SysUserGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SysGroupRole_SysRole" Association="WebApiDbModel.FK_SysGroupRole_SysRole">
+            <End Role="SysRole" EntitySet="SysRoles" />
+            <End Role="SysGroupRole" EntitySet="SysGroupRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SysHistory_SysUser" Association="WebApiDbModel.FK_SysHistory_SysUser">
+            <End Role="SysUser" EntitySet="SysUsers" />
+            <End Role="SysHistory" EntitySet="SysHistories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SysUserRole_SysRole" Association="WebApiDbModel.FK_SysUserRole_SysRole">
+            <End Role="SysRole" EntitySet="SysRoles" />
+            <End Role="SysUserRole" EntitySet="SysUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SysUserGroup_SysUser" Association="WebApiDbModel.FK_SysUserGroup_SysUser">
+            <End Role="SysUser" EntitySet="SysUsers" />
+            <End Role="SysUserGroup" EntitySet="SysUserGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SysUserOption_SysUser" Association="WebApiDbModel.FK_SysUserOption_SysUser">
+            <End Role="SysUser" EntitySet="SysUsers" />
+            <End Role="SysUserOption" EntitySet="SysUserOptions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SysUserRole_SysUser" Association="WebApiDbModel.FK_SysUserRole_SysUser">
+            <End Role="SysUser" EntitySet="SysUsers" />
+            <End Role="SysUserRole" EntitySet="SysUserRoles" />
+          </AssociationSet>
+          <EntitySet Name="Tokens" EntityType="WebApiDbModel.Token" />
+        </EntityContainer>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Code" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="InviteId" Type="Int32" Nullable="false" />
+          <Property Name="InviteName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ManagerId" Type="Int32" Nullable="false" />
+          <Property Name="ManagerName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="IdNumber" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="IdDate" Type="DateTime" Precision="3" />
+          <Property Name="IdProvince1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IdAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="IdProvince2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BirthDate" Type="DateTime" Precision="3" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="TaxCode" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="BankName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="BankAccount" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="EmbarkDate" Type="DateTime" Precision="3" />
+          <Property Name="EmbarkLevel" Type="Int16" />
+          <Property Name="Disabled" Type="Boolean" Nullable="false" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="Actived" Type="Boolean" Nullable="false" />
+          <Property Name="CreateBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifyBy" Type="Int32" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerId" Type="Int32" Nullable="false" />
+          <Property Name="CustomerCode" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PriceMark" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateExportOrder" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="StaffId" Type="Int32" Nullable="false" />
+          <Property Name="StaffName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Month" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Rejected" Type="Boolean" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="CreateBy" Type="Int32" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifyBy" Type="Int32" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="OrderDetails" Relationship="WebApiDbModel.FK_OrderDetail_Order" FromRole="Order" ToRole="OrderDetail" />
+        </EntityType>
+        <EntityType Name="OrderDetail">
+          <Key>
+            <PropertyRef Name="OrderId" />
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="OrderId" Type="Int32" Nullable="false" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="ProductCode" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="ProductName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Int16" Nullable="false" />
+          <Property Name="UnitPrice" Type="Double" Nullable="false" />
+          <Property Name="MarkPrice" Type="Double" Nullable="false" />
+          <Property Name="Discount" Type="Double" Nullable="false" />
+          <Property Name="Unit" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Order" Relationship="WebApiDbModel.FK_OrderDetail_Order" FromRole="OrderDetail" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="SupplierId" Type="Int32" Nullable="false" />
+          <Property Name="CategoryId" Type="Int32" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="UnitPrice" Type="Double" Nullable="false" />
+          <Property Name="Discount" Type="Double" />
+          <Property Name="PriceMark" Type="Int32" Nullable="false" />
+          <Property Name="UnitsInStock" Type="Int16" Nullable="false" />
+          <Property Name="UnitsOnOrder" Type="Int16" />
+          <Property Name="ReorderLevel" Type="Int16" />
+          <Property Name="Unit" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="QuantityPerUnit" Type="Int16" />
+          <Property Name="Discontinued" Type="Int16" />
+          <Property Name="Disabled" Type="Boolean" Nullable="false" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="Actived" Type="Boolean" Nullable="false" />
+          <Property Name="CreateBy" Type="Int32" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifyBy" Type="Int32" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ProductCategory" Relationship="WebApiDbModel.FK_Product_ProductCategory" FromRole="Product" ToRole="ProductCategory" />
+          <NavigationProperty Name="Supplier" Relationship="WebApiDbModel.FK_Product_Supplier" FromRole="Product" ToRole="Supplier" />
+        </EntityType>
+        <EntityType Name="ProductCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="CategoryName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PicturePath" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Products" Relationship="WebApiDbModel.FK_Product_ProductCategory" FromRole="ProductCategory" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="ProfitPrice">
+          <Key>
+            <PropertyRef Name="CustomerId" />
+          </Key>
+          <Property Name="CustomerId" Type="Int32" Nullable="false" />
+          <Property Name="CustomerCode" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Month" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PositionName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="PV" Type="Double" />
+          <Property Name="Direct" Type="Double" />
+          <Property Name="Mediate" Type="Double" />
+          <Property Name="Periodic" Type="Double" />
+          <Property Name="Sun" Type="Double" />
+          <Property Name="SysManager" Type="Double" />
+          <Property Name="Position" Type="Double" />
+          <Property Name="GroupSplit" Type="Double" />
+          <Property Name="Agency" Type="Double" />
+          <Property Name="Total" Type="Double" />
+          <Property Name="BeforeTax" Type="Double" />
+          <Property Name="AfterTax" Type="Double" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateBy" Type="Int32" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifyBy" Type="Int32" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="ProfitStatistic">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Month" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PositionName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="PV" Type="Double" />
+          <Property Name="Direct" Type="Double" />
+          <Property Name="Mediate" Type="Double" />
+          <Property Name="Periodic" Type="Double" />
+          <Property Name="Sun" Type="Double" />
+          <Property Name="SysManager" Type="Double" />
+          <Property Name="Position" Type="Double" />
+          <Property Name="GroupSplit" Type="Double" />
+          <Property Name="Agency" Type="Double" />
+          <Property Name="Total" Type="Double" />
+          <Property Name="BeforeTax" Type="Double" />
+          <Property Name="AfterTax" Type="Double" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateBy" Type="Int32" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifyBy" Type="Int32" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ContactName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ContactTitle" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Region" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PostalCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="HomePage" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Disabled" Type="Boolean" Nullable="false" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="Actived" Type="Boolean" Nullable="false" />
+          <Property Name="CreateBy" Type="Int32" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifyBy" Type="Int32" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Products" Relationship="WebApiDbModel.FK_Product_Supplier" FromRole="Supplier" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="SysGroup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Parent" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="EnableDelete" Type="Boolean" Nullable="false" />
+          <Property Name="SortIndex" Type="Int16" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Disabled" Type="Boolean" Nullable="false" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="Actived" Type="Boolean" Nullable="false" />
+          <Property Name="CreateBy" Type="Int32" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifyBy" Type="Int32" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="SysGroupRoles" Relationship="WebApiDbModel.FK_SysGroupRole_SysGroup" FromRole="SysGroup" ToRole="SysGroupRole" />
+          <NavigationProperty Name="SysUserGroups" Relationship="WebApiDbModel.FK_SysUserGroup_SysGroup" FromRole="SysGroup" ToRole="SysUserGroup" />
+        </EntityType>
+        <EntityType Name="SysGroupRole">
+          <Key>
+            <PropertyRef Name="RoleId" />
+            <PropertyRef Name="GroupId" />
+          </Key>
+          <Property Name="RoleId" Type="Int32" Nullable="false" />
+          <Property Name="GroupId" Type="Int32" Nullable="false" />
+          <Property Name="AllowView" Type="Boolean" Nullable="false" />
+          <Property Name="AllowAdd" Type="Boolean" Nullable="false" />
+          <Property Name="AllowDelete" Type="Boolean" Nullable="false" />
+          <Property Name="AllowEdit" Type="Boolean" Nullable="false" />
+          <Property Name="AllowAccess" Type="Boolean" Nullable="false" />
+          <Property Name="AllowPrint" Type="Boolean" Nullable="false" />
+          <Property Name="AllowExport" Type="Boolean" Nullable="false" />
+          <Property Name="AllowImport" Type="Boolean" Nullable="false" />
+          <Property Name="Disabled" Type="Boolean" Nullable="false" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="Actived" Type="Boolean" Nullable="false" />
+          <Property Name="CreateBy" Type="Int32" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifyBy" Type="Int32" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="SysGroup" Relationship="WebApiDbModel.FK_SysGroupRole_SysGroup" FromRole="SysGroupRole" ToRole="SysGroup" />
+          <NavigationProperty Name="SysRole" Relationship="WebApiDbModel.FK_SysGroupRole_SysRole" FromRole="SysGroupRole" ToRole="SysRole" />
+        </EntityType>
+        <EntityType Name="SysHistory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="FunctionName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreateBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="SysUser" Relationship="WebApiDbModel.FK_SysHistory_SysUser" FromRole="SysHistory" ToRole="SysUser" />
+        </EntityType>
+        <EntityType Name="SysOption">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="ProjectId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Editable" Type="Boolean" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SysRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="FunctionCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FunctionName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ParentName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="RLevel" Type="Byte" Nullable="false" />
+          <Property Name="OrderSort" Type="Int16" Nullable="false" />
+          <Property Name="Owner" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Disabled" Type="Boolean" Nullable="false" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="Actived" Type="Boolean" Nullable="false" />
+          <Property Name="CreateBy" Type="Int32" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifyBy" Type="Int32" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="SysGroupRoles" Relationship="WebApiDbModel.FK_SysGroupRole_SysRole" FromRole="SysRole" ToRole="SysGroupRole" />
+          <NavigationProperty Name="SysUserRoles" Relationship="WebApiDbModel.FK_SysUserRole_SysRole" FromRole="SysRole" ToRole="SysUserRole" />
+        </EntityType>
+        <EntityType Name="SysUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="BirthDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Disabled" Type="Boolean" Nullable="false" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="Actived" Type="Boolean" Nullable="false" />
+          <Property Name="CreateBy" Type="Int32" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifyBy" Type="Int32" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="SysHistories" Relationship="WebApiDbModel.FK_SysHistory_SysUser" FromRole="SysUser" ToRole="SysHistory" />
+          <NavigationProperty Name="SysUserGroups" Relationship="WebApiDbModel.FK_SysUserGroup_SysUser" FromRole="SysUser" ToRole="SysUserGroup" />
+          <NavigationProperty Name="SysUserOptions" Relationship="WebApiDbModel.FK_SysUserOption_SysUser" FromRole="SysUser" ToRole="SysUserOption" />
+          <NavigationProperty Name="SysUserRoles" Relationship="WebApiDbModel.FK_SysUserRole_SysUser" FromRole="SysUser" ToRole="SysUserRole" />
+        </EntityType>
+        <EntityType Name="SysUserGroup">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="GroupId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="GroupId" Type="Int32" Nullable="false" />
+          <Property Name="CreateBy" Type="Int32" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="SysGroup" Relationship="WebApiDbModel.FK_SysUserGroup_SysGroup" FromRole="SysUserGroup" ToRole="SysGroup" />
+          <NavigationProperty Name="SysUser" Relationship="WebApiDbModel.FK_SysUserGroup_SysUser" FromRole="SysUserGroup" ToRole="SysUser" />
+        </EntityType>
+        <EntityType Name="SysUserOption">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="ProjectId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Editable" Type="Boolean" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SysUser" Relationship="WebApiDbModel.FK_SysUserOption_SysUser" FromRole="SysUserOption" ToRole="SysUser" />
+        </EntityType>
+        <EntityType Name="SysUserRole">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="RoleId" Type="Int32" Nullable="false" />
+          <Property Name="AllowView" Type="Boolean" Nullable="false" />
+          <Property Name="AllowAdd" Type="Boolean" Nullable="false" />
+          <Property Name="AllowDelete" Type="Boolean" Nullable="false" />
+          <Property Name="AllowEdit" Type="Boolean" Nullable="false" />
+          <Property Name="AllowAccess" Type="Boolean" Nullable="false" />
+          <Property Name="AllowPrint" Type="Boolean" Nullable="false" />
+          <Property Name="AllowExport" Type="Boolean" Nullable="false" />
+          <Property Name="AllowImport" Type="Boolean" Nullable="false" />
+          <Property Name="Disabled" Type="Boolean" Nullable="false" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="Actived" Type="Boolean" Nullable="false" />
+          <Property Name="CreateBy" Type="Int32" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifyBy" Type="Int32" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="SysRole" Relationship="WebApiDbModel.FK_SysUserRole_SysRole" FromRole="SysUserRole" ToRole="SysRole" />
+          <NavigationProperty Name="SysUser" Relationship="WebApiDbModel.FK_SysUserRole_SysUser" FromRole="SysUserRole" ToRole="SysUser" />
+        </EntityType>
+        <EntityType Name="Unit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_OrderDetail_Order">
+          <End Type="WebApiDbModel.Order" Role="Order" Multiplicity="1" />
+          <End Type="WebApiDbModel.OrderDetail" Role="OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_ProductCategory">
+          <End Type="WebApiDbModel.ProductCategory" Role="ProductCategory" Multiplicity="0..1" />
+          <End Type="WebApiDbModel.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Supplier">
+          <End Type="WebApiDbModel.Supplier" Role="Supplier" Multiplicity="1" />
+          <End Type="WebApiDbModel.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Supplier">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="SupplierId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SysGroupRole_SysGroup">
+          <End Type="WebApiDbModel.SysGroup" Role="SysGroup" Multiplicity="1" />
+          <End Type="WebApiDbModel.SysGroupRole" Role="SysGroupRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SysGroup">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SysGroupRole">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SysUserGroup_SysGroup">
+          <End Type="WebApiDbModel.SysGroup" Role="SysGroup" Multiplicity="1" />
+          <End Type="WebApiDbModel.SysUserGroup" Role="SysUserGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SysGroup">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SysUserGroup">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SysGroupRole_SysRole">
+          <End Type="WebApiDbModel.SysRole" Role="SysRole" Multiplicity="1" />
+          <End Type="WebApiDbModel.SysGroupRole" Role="SysGroupRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SysRole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SysGroupRole">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SysHistory_SysUser">
+          <End Type="WebApiDbModel.SysUser" Role="SysUser" Multiplicity="0..1" />
+          <End Type="WebApiDbModel.SysHistory" Role="SysHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SysUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SysHistory">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SysUserRole_SysRole">
+          <End Type="WebApiDbModel.SysRole" Role="SysRole" Multiplicity="1" />
+          <End Type="WebApiDbModel.SysUserRole" Role="SysUserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SysRole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SysUserRole">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SysUserGroup_SysUser">
+          <End Type="WebApiDbModel.SysUser" Role="SysUser" Multiplicity="1" />
+          <End Type="WebApiDbModel.SysUserGroup" Role="SysUserGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SysUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SysUserGroup">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SysUserOption_SysUser">
+          <End Type="WebApiDbModel.SysUser" Role="SysUser" Multiplicity="1" />
+          <End Type="WebApiDbModel.SysUserOption" Role="SysUserOption" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SysUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SysUserOption">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SysUserRole_SysUser">
+          <End Type="WebApiDbModel.SysUser" Role="SysUser" Multiplicity="1" />
+          <End Type="WebApiDbModel.SysUserRole" Role="SysUserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SysUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SysUserRole">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Token">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="AuthToken" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="IssuedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ExpiresOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Disabled" Type="Boolean" Nullable="false" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="Actived" Type="Boolean" Nullable="false" />
+          <Property Name="CreateBy" Type="Int32" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifyBy" Type="Int32" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WebApiDbModelStoreContainer" CdmEntityContainer="WebApiDbEntities">
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="WebApiDbModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="Actived" ColumnName="Actived" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Disabled" ColumnName="Disabled" />
+                <ScalarProperty Name="EmbarkLevel" ColumnName="EmbarkLevel" />
+                <ScalarProperty Name="EmbarkDate" ColumnName="EmbarkDate" />
+                <ScalarProperty Name="BankAccount" ColumnName="BankAccount" />
+                <ScalarProperty Name="BankName" ColumnName="BankName" />
+                <ScalarProperty Name="TaxCode" ColumnName="TaxCode" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="IdProvince2" ColumnName="IdProvince2" />
+                <ScalarProperty Name="IdAddress" ColumnName="IdAddress" />
+                <ScalarProperty Name="IdProvince1" ColumnName="IdProvince1" />
+                <ScalarProperty Name="IdDate" ColumnName="IdDate" />
+                <ScalarProperty Name="IdNumber" ColumnName="IdNumber" />
+                <ScalarProperty Name="ManagerName" ColumnName="ManagerName" />
+                <ScalarProperty Name="ManagerId" ColumnName="ManagerId" />
+                <ScalarProperty Name="InviteName" ColumnName="InviteName" />
+                <ScalarProperty Name="InviteId" ColumnName="InviteId" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="WebApiDbModel.Order">
+              <MappingFragment StoreEntitySet="Order">
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Rejected" ColumnName="Rejected" />
+                <ScalarProperty Name="Month" ColumnName="Month" />
+                <ScalarProperty Name="StaffName" ColumnName="StaffName" />
+                <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+                <ScalarProperty Name="DateExportOrder" ColumnName="DateExportOrder" />
+                <ScalarProperty Name="PriceMark" ColumnName="PriceMark" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderDetails">
+            <EntityTypeMapping TypeName="WebApiDbModel.OrderDetail">
+              <MappingFragment StoreEntitySet="OrderDetail">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="MarkPrice" ColumnName="MarkPrice" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="WebApiDbModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="Actived" ColumnName="Actived" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Disabled" ColumnName="Disabled" />
+                <ScalarProperty Name="Discontinued" ColumnName="Discontinued" />
+                <ScalarProperty Name="QuantityPerUnit" ColumnName="QuantityPerUnit" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="ReorderLevel" ColumnName="ReorderLevel" />
+                <ScalarProperty Name="UnitsOnOrder" ColumnName="UnitsOnOrder" />
+                <ScalarProperty Name="UnitsInStock" ColumnName="UnitsInStock" />
+                <ScalarProperty Name="PriceMark" ColumnName="PriceMark" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductCategories">
+            <EntityTypeMapping TypeName="WebApiDbModel.ProductCategory">
+              <MappingFragment StoreEntitySet="ProductCategory">
+                <ScalarProperty Name="PicturePath" ColumnName="PicturePath" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProfitPrices">
+            <EntityTypeMapping TypeName="WebApiDbModel.ProfitPrice">
+              <MappingFragment StoreEntitySet="ProfitPrice">
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="AfterTax" ColumnName="AfterTax" />
+                <ScalarProperty Name="BeforeTax" ColumnName="BeforeTax" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="Agency" ColumnName="Agency" />
+                <ScalarProperty Name="GroupSplit" ColumnName="GroupSplit" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="SysManager" ColumnName="SysManager" />
+                <ScalarProperty Name="Sun" ColumnName="Sun" />
+                <ScalarProperty Name="Periodic" ColumnName="Periodic" />
+                <ScalarProperty Name="Mediate" ColumnName="Mediate" />
+                <ScalarProperty Name="Direct" ColumnName="Direct" />
+                <ScalarProperty Name="PV" ColumnName="PV" />
+                <ScalarProperty Name="PositionName" ColumnName="PositionName" />
+                <ScalarProperty Name="Month" ColumnName="Month" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProfitStatistics">
+            <EntityTypeMapping TypeName="WebApiDbModel.ProfitStatistic">
+              <MappingFragment StoreEntitySet="ProfitStatistic">
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="AfterTax" ColumnName="AfterTax" />
+                <ScalarProperty Name="BeforeTax" ColumnName="BeforeTax" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="Agency" ColumnName="Agency" />
+                <ScalarProperty Name="GroupSplit" ColumnName="GroupSplit" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="SysManager" ColumnName="SysManager" />
+                <ScalarProperty Name="Sun" ColumnName="Sun" />
+                <ScalarProperty Name="Periodic" ColumnName="Periodic" />
+                <ScalarProperty Name="Mediate" ColumnName="Mediate" />
+                <ScalarProperty Name="Direct" ColumnName="Direct" />
+                <ScalarProperty Name="PV" ColumnName="PV" />
+                <ScalarProperty Name="PositionName" ColumnName="PositionName" />
+                <ScalarProperty Name="Month" ColumnName="Month" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Suppliers">
+            <EntityTypeMapping TypeName="WebApiDbModel.Supplier">
+              <MappingFragment StoreEntitySet="Supplier">
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="Actived" ColumnName="Actived" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Disabled" ColumnName="Disabled" />
+                <ScalarProperty Name="HomePage" ColumnName="HomePage" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Region" ColumnName="Region" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="ContactTitle" ColumnName="ContactTitle" />
+                <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="WebApiDbModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SysGroups">
+            <EntityTypeMapping TypeName="WebApiDbModel.SysGroup">
+              <MappingFragment StoreEntitySet="SysGroup">
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="Actived" ColumnName="Actived" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Disabled" ColumnName="Disabled" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="SortIndex" ColumnName="SortIndex" />
+                <ScalarProperty Name="EnableDelete" ColumnName="EnableDelete" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Parent" ColumnName="Parent" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SysGroupRoles">
+            <EntityTypeMapping TypeName="WebApiDbModel.SysGroupRole">
+              <MappingFragment StoreEntitySet="SysGroupRole">
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="Actived" ColumnName="Actived" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Disabled" ColumnName="Disabled" />
+                <ScalarProperty Name="AllowImport" ColumnName="AllowImport" />
+                <ScalarProperty Name="AllowExport" ColumnName="AllowExport" />
+                <ScalarProperty Name="AllowPrint" ColumnName="AllowPrint" />
+                <ScalarProperty Name="AllowAccess" ColumnName="AllowAccess" />
+                <ScalarProperty Name="AllowEdit" ColumnName="AllowEdit" />
+                <ScalarProperty Name="AllowDelete" ColumnName="AllowDelete" />
+                <ScalarProperty Name="AllowAdd" ColumnName="AllowAdd" />
+                <ScalarProperty Name="AllowView" ColumnName="AllowView" />
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SysHistories">
+            <EntityTypeMapping TypeName="WebApiDbModel.SysHistory">
+              <MappingFragment StoreEntitySet="SysHistory">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="FunctionName" ColumnName="FunctionName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SysOptions">
+            <EntityTypeMapping TypeName="WebApiDbModel.SysOption">
+              <MappingFragment StoreEntitySet="SysOption">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Editable" ColumnName="Editable" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SysRoles">
+            <EntityTypeMapping TypeName="WebApiDbModel.SysRole">
+              <MappingFragment StoreEntitySet="SysRole">
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="Actived" ColumnName="Actived" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Disabled" ColumnName="Disabled" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OrderSort" ColumnName="OrderSort" />
+                <ScalarProperty Name="RLevel" ColumnName="RLevel" />
+                <ScalarProperty Name="ParentName" ColumnName="ParentName" />
+                <ScalarProperty Name="FunctionName" ColumnName="FunctionName" />
+                <ScalarProperty Name="FunctionCode" ColumnName="FunctionCode" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SysUsers">
+            <EntityTypeMapping TypeName="WebApiDbModel.SysUser">
+              <MappingFragment StoreEntitySet="SysUser">
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="Actived" ColumnName="Actived" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Disabled" ColumnName="Disabled" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SysUserGroups">
+            <EntityTypeMapping TypeName="WebApiDbModel.SysUserGroup">
+              <MappingFragment StoreEntitySet="SysUserGroup">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SysUserOptions">
+            <EntityTypeMapping TypeName="WebApiDbModel.SysUserOption">
+              <MappingFragment StoreEntitySet="SysUserOption">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Editable" ColumnName="Editable" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SysUserRoles">
+            <EntityTypeMapping TypeName="WebApiDbModel.SysUserRole">
+              <MappingFragment StoreEntitySet="SysUserRole">
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="Actived" ColumnName="Actived" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Disabled" ColumnName="Disabled" />
+                <ScalarProperty Name="AllowImport" ColumnName="AllowImport" />
+                <ScalarProperty Name="AllowExport" ColumnName="AllowExport" />
+                <ScalarProperty Name="AllowPrint" ColumnName="AllowPrint" />
+                <ScalarProperty Name="AllowAccess" ColumnName="AllowAccess" />
+                <ScalarProperty Name="AllowEdit" ColumnName="AllowEdit" />
+                <ScalarProperty Name="AllowDelete" ColumnName="AllowDelete" />
+                <ScalarProperty Name="AllowAdd" ColumnName="AllowAdd" />
+                <ScalarProperty Name="AllowView" ColumnName="AllowView" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Units">
+            <EntityTypeMapping TypeName="WebApiDbModel.Unit">
+              <MappingFragment StoreEntitySet="Unit">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tokens">
+            <EntityTypeMapping TypeName="WebApiDbModel.Token">
+              <MappingFragment StoreEntitySet="Token">
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="Actived" ColumnName="Actived" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Disabled" ColumnName="Disabled" />
+                <ScalarProperty Name="ExpiresOn" ColumnName="ExpiresOn" />
+                <ScalarProperty Name="IssuedOn" ColumnName="IssuedOn" />
+                <ScalarProperty Name="AuthToken" ColumnName="AuthToken" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="WebApiDataModel">
+        <EntityTypeShape EntityType="WebApiDbModel.Customer" Width="1.5" PointX="5.75" PointY="12" />
+        <EntityTypeShape EntityType="WebApiDbModel.Order" Width="1.5" PointX="10.75" PointY="8.25" />
+        <EntityTypeShape EntityType="WebApiDbModel.OrderDetail" Width="1.5" PointX="13" PointY="9" />
+        <EntityTypeShape EntityType="WebApiDbModel.Product" Width="1.5" PointX="11" PointY="1.375" />
+        <EntityTypeShape EntityType="WebApiDbModel.ProductCategory" Width="1.5" PointX="8.75" PointY="3.125" />
+        <EntityTypeShape EntityType="WebApiDbModel.ProfitPrice" Width="1.5" PointX="7.75" PointY="13" />
+        <EntityTypeShape EntityType="WebApiDbModel.ProfitStatistic" Width="1.5" PointX="12.75" PointY="13" />
+        <EntityTypeShape EntityType="WebApiDbModel.Supplier" Width="1.5" PointX="8.75" PointY="6.625" />
+        <EntityTypeShape EntityType="WebApiDbModel.sysdiagram" Width="1.5" PointX="0.75" PointY="13" />
+        <EntityTypeShape EntityType="WebApiDbModel.SysGroup" Width="1.5" PointX="0.75" PointY="2" />
+        <EntityTypeShape EntityType="WebApiDbModel.SysGroupRole" Width="1.5" PointX="6" PointY="1" />
+        <EntityTypeShape EntityType="WebApiDbModel.SysHistory" Width="1.5" PointX="3" PointY="8.875" />
+        <EntityTypeShape EntityType="WebApiDbModel.SysOption" Width="1.5" PointX="2.75" PointY="13" />
+        <EntityTypeShape EntityType="WebApiDbModel.SysRole" Width="1.5" PointX="3.75" PointY="0.75" />
+        <EntityTypeShape EntityType="WebApiDbModel.SysUser" Width="1.5" PointX="0.75" PointY="6.625" />
+        <EntityTypeShape EntityType="WebApiDbModel.SysUserGroup" Width="1.5" PointX="3" PointY="5.75" />
+        <EntityTypeShape EntityType="WebApiDbModel.SysUserOption" Width="1.5" PointX="3" PointY="17.625" />
+        <EntityTypeShape EntityType="WebApiDbModel.SysUserRole" Width="1.5" PointX="6" PointY="6.5" />
+        <EntityTypeShape EntityType="WebApiDbModel.Unit" Width="1.5" PointX="13.75" PointY="1" />
+        <AssociationConnector Association="WebApiDbModel.FK_OrderDetail_Order" />
+        <AssociationConnector Association="WebApiDbModel.FK_Product_ProductCategory" />
+        <AssociationConnector Association="WebApiDbModel.FK_Product_Supplier" />
+        <AssociationConnector Association="WebApiDbModel.FK_SysGroupRole_SysGroup" />
+        <AssociationConnector Association="WebApiDbModel.FK_SysUserGroup_SysGroup" />
+        <AssociationConnector Association="WebApiDbModel.FK_SysGroupRole_SysRole" />
+        <AssociationConnector Association="WebApiDbModel.FK_SysHistory_SysUser" />
+        <AssociationConnector Association="WebApiDbModel.FK_SysUserRole_SysRole" />
+        <AssociationConnector Association="WebApiDbModel.FK_SysUserGroup_SysUser" />
+        <AssociationConnector Association="WebApiDbModel.FK_SysUserOption_SysUser" />
+        <AssociationConnector Association="WebApiDbModel.FK_SysUserRole_SysUser" />
+        <EntityTypeShape EntityType="WebApiDbModel.Token" Width="1.5" PointX="13.375" PointY="3.75" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

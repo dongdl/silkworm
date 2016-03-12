@@ -1,0 +1,89 @@
+2016-03-07 23:35:53.3877|INFO|WebApi.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:50875/v1/Products/Product/all
+Controller : WebApi.Controllers.ProductController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-07 23:36:25.6385|INFO|WebApi.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:50875/v1/Products/Product/allproducts
+Controller : WebApi.Controllers.ProductController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-07 23:37:17.0625|INFO|WebApi.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:50875/v1/Products/Product/allproducts
+Controller : WebApi.Controllers.ProductController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-07 23:38:20.6871|INFO|WebApi.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:50875/v1/Products/Product/allproducts
+Controller : WebApi.Controllers.ProductController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-07 23:43:30.6388|INFO|WebApi.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:50875/v1/Products/Product/allproducts
+Controller : WebApi.Controllers.ProductController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-07 23:47:09.5003|INFO|WebApi.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:50875/v1/Products/Product/allproducts
+Controller : WebApi.Controllers.ProductController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-07 23:47:43.9023|INFO|WebApi.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:50875/v1/Products/Product/allproducts
+Controller : WebApi.Controllers.ProductController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-07 23:48:17.9173|INFO|WebApi.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:50875/v1/Products/Product/allproducts
+Controller : WebApi.Controllers.ProductController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-07 23:49:14.6885|INFO|WebApi.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:50875/v1/Products/Product/allproducts
+Token: 123
+Controller : WebApi.Controllers.ProductController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-07 23:50:19.8812|INFO|WebApi.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:50875/v1/Products/Product/allproducts
+Token: 224
+Controller : WebApi.Controllers.ProductController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2016-03-07 23:50:26.0586|ERROR|WebApi.Helpers.NLogger|Method: GET
+URL: http://localhost:50875/v1/Products/Product/allproducts
+Token: 224
+Controller : WebApi.Controllers.ProductController
+Action : Get
+Action Parameters : 
+Error: Sequence contains no matching element
+
+
+2016-03-07 23:50:38.3643|INFO|WebApi.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:50875/v1/Products/Product/allproducts
+Token: 123
+Controller : WebApi.Controllers.ProductController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
