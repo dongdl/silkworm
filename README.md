@@ -66,14 +66,10 @@ Bước 5: kết nối với repository trên server
 </b></h4>
 <br>
 <code>
-git remote add origin git@gitserver:/[username]/[repository].git
-<br>
+git remote add origin git@gitserver:/[username]/[repository].git<br>
 # gitserver - là domain name của Git Server. Ví dụ như github.com, bitbucket.org, …
-<br>
 # username - tên đăng nhập của bạn trên Git Server
-<br>
 # repository - tên repository mà bạn đã tạo
-<br>
 </code>
 <br>
 Lệnh này gồm 2 phần:
