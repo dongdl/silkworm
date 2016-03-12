@@ -158,8 +158,8 @@ source
         v3.1
 </code>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<h4><b>Bước 7: Đẩy source code lên server</b></h4>
+<code>
+git push -u origin [tên nhánh]
+# đẩy mã nguồn lên vào một nhánh trên repository git@gitserver:/[username]/[repository].git.
+</code>
