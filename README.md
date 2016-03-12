@@ -128,35 +128,24 @@ Bằng cách sử dụng linh hoạt nhánh này bạn có thể tạo ra các p
 <code>
 source
     v1
-<br>
         v1.0
-<br>
         v1.1
-<br>
         v1.2
-<br>
     v2
-<br>
         v2.0
-<br>
         v2.1
-<br>
         v2.2
-<br>
     v3
-<br>
         v3.0
-<br>
         v3.1
 </code>
-<br>
 <h4><b>Bước 7: Đẩy source code lên server</b></h4>
 <code>
 git push -u origin [tên nhánh]
 # đẩy mã nguồn lên vào một nhánh trên repository git@gitserver:/[username]/[repository].git.
+</code>
 # đẩy mã nguồn lên vào một nhánh trên repository git@gitserver:/[username]/[repository].git.
 # đẩy mã nguồn lên vào một nhánh trên repository git@gitserver:/[username]/[repository].git.
 # đẩy mã nguồn lên vào một nhánh trên repository git@gitserver:/[username]/[repository].git.
 # TEsdfsd sdf d sdf sfas
 # sdf safd safs dss
-</code>
